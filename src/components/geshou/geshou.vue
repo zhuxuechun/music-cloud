@@ -130,12 +130,9 @@ export default {
 .zong {
   z-index: 3000;
   width: 100vw;
-<<<<<<< HEAD
   //   top:170px;
   //   position: fixed;
   //   bottom:90px
-=======
->>>>>>> e436518 (second)
 }
 .yuzhong {
   font-size: 14px;
@@ -164,7 +161,6 @@ export default {
 .fenlei span:nth-child(1) ~ span {
   margin-left: 43.5px;
 }
-<<<<<<< HEAD
 // .fenlei span:nth-child(2) {
 //   color: red;
 //   // width:40px;
@@ -183,9 +179,6 @@ export default {
 //   // background-color: rgb(227, 233, 238);
 //   // border-radius: 8px;
 // }
-=======
-
->>>>>>> e436518 (second)
 .shai {
   margin-left: 100px;
   margin-top: 10px;

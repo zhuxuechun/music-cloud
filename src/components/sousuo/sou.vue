@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
   <el-scrollbar>
-=======
-  <el-scrollbar v-loading="load">
->>>>>>> e436518 (second)
     <div class="he">
       <div class="tishi">
         <span>搜索&ensp;{{ this.$store.state.shuru }}</span>
@@ -16,11 +12,7 @@
             :src="
               !$store.state.geshouxin
                 ? 'https://p4.music.126.net/fqZPrpG6ABuuHb8EVKf8HQ==/109951166924458141.jpg'
-<<<<<<< HEAD
                 : x.cover
-=======
-                : x.cover + '?param=50y50'
->>>>>>> e436518 (second)
             "
             alt=""
           />
@@ -70,11 +62,7 @@
         <tbody>
           <tr v-for="(x, i) in $store.state.slist" :key="x.id">
             <td class="h">
-<<<<<<< HEAD
               <template v-if="$store.state.dqge.id !== x">{{
-=======
-              <template v-if="$store.state.dqge.id !== x.id">{{
->>>>>>> e436518 (second)
                 i < 9 ? "0" + (i + 1) : i + 1
               }}</template>
               <template v-else
@@ -88,11 +76,7 @@
                     <svg class="icon" aria-hidden="true" @click="zan(x)">
                       <use
                         :xlink:href="
-<<<<<<< HEAD
                           $store.state.tt.indexOf(x) === -1
-=======
-                          tt.indexOf(x.id) === -1
->>>>>>> e436518 (second)
                             ? '#icon-56aixin'
                             : '#icon-aixin'
                         "
@@ -149,10 +133,6 @@ export default {
         { id: 8, n: "声音" },
         { id: 9, n: "用户" },
       ],
-<<<<<<< HEAD
-=======
-      load: true,
->>>>>>> e436518 (second)
       songxinxi: [],
       geshou: [],
       geshouxin: [],
@@ -325,17 +305,10 @@ export default {
       } = await this.$host.get("Api/artist/detail?id=" + artistlist[t]);
       gsl.push(re.artist);
     }
-<<<<<<< HEAD
-=======
-    gsl.forEach((x) => {
-      x.cover = x.cover + "?param=50y50";
-    });
->>>>>>> e436518 (second)
 
     this.$store.commit("geshouxin", gsl);
     this.$store.commit("slist", res);
     this.$router.push("/sou");
-<<<<<<< HEAD
 
     let tt = [];
     for (let i = 0; i < this.$store.state.lsong.length; i++) {
@@ -347,18 +320,6 @@ export default {
     }
 
     this.$store.commit("tt", tt);
-=======
-    let tt = [];
-    tt = this.$store.state.lsong.map((x) => {
-      return x.id;
-    });
-    this.tt = tt;
-
-    // this.$store.commit("tt", tt);
-  },
-  mounted() {
-    this.load = false;
->>>>>>> e436518 (second)
   },
 };
 </script>

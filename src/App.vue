@@ -456,17 +456,10 @@ export default defineComponent({
       this.$store.commit("chuan", res);
     },
     async tgd(can) {
-<<<<<<< HEAD
       let { data } = await this.$host.get("Api/playlist/detail?id=" + can.id);
       console.log(data);
       this.$store.commit("gedanye", data.playlist);
       this.$router.push("gedan");
-=======
-      this.$router.push("gedan");
-      let { data } = await this.$host.get("Api/playlist/detail?id=" + can.id);
-      console.log(data);
-      this.$store.commit("gedanye", data.playlist);
->>>>>>> e436518 (second)
       this.$store.commit("gdlist", data.playlist.tracks);
     },
     async cai() {
@@ -549,10 +542,6 @@ export default defineComponent({
       }
     },
     async sousuo() {
-<<<<<<< HEAD
-=======
-      this.$router.push("/sou");
->>>>>>> e436518 (second)
       this.$store.commit("lishi", this.shuru);
       this.$store.commit("sousuo", this.shuru);
       let {
@@ -583,10 +572,7 @@ export default defineComponent({
       console.log(gsl);
       this.$store.commit("geshouxin", gsl);
       this.$store.commit("slist", res);
-<<<<<<< HEAD
       this.$router.push("/sou");
-=======
->>>>>>> e436518 (second)
 
       let tt = [];
       for (let i = 0; i < this.$store.state.lsong.length; i++) {

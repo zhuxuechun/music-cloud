@@ -29,11 +29,7 @@
               :src="
                 $store.state.dage === ''
                   ? 'https://p4.music.126.net/fqZPrpG6ABuuHb8EVKf8HQ==/109951166924458141.jpg'
-<<<<<<< HEAD
                   : $store.state.dqge.al.picUrl
-=======
-                  : $store.state.dqge.al.picUrl+'?param=200y200'
->>>>>>> e436518 (second)
               "
               alt=""
             />

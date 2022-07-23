@@ -2,7 +2,6 @@
   <div class="toubu">
     <el-scrollbar max-height="75vh">
       <div class="tou">
-<<<<<<< HEAD
         <img :src="this.$store.state.gedanxin.coverImgUrl" alt="" />
         <div class="tr">
           <div class="jian">
@@ -12,35 +11,12 @@
             <div>播放全部</div>
             <div>分享({{ this.$store.state.gedanxin.shareCount }})</div>
             <!-- <div>收藏({{this.$store.state.gedanxin.playCount}})</div> -->
-=======
-        <img :src="$store.state.gedanxin.coverImgUrl" alt="" />
-        <div class="tr">
-          <div class="jian">
-            <div>{{ $store.state.gedanxin.name }}</div>
-          </div>
-          <div class="zuo">
-            <img
-              :src="$store.state.gedanxin.creator.avatarUrl + '?param=50y50'"
-              alt=""
-            />
-            &ensp;<span>{{ $store.state.gedanxin.createTime }}</span>
-          </div>
-          <div class="hong">
-            <div class="iconfont icon-bofang">&nbsp;播放全部</div>
-            <div class="iconfont icon-dianzan">
-              点赞({{ this.$store.state.gedanxin.subscribedCount }})
-            </div>
->>>>>>> e436518 (second)
           </div>
           <div class="biao">
             <div class="tags">
               标签:&nbsp;
               <div v-for="(item, i) in $store.state.gedanxin.tags" :key="item">
-<<<<<<< HEAD
                 {{i===$store.state.gedanxin.tags.length-1?item &nbsp;:item &nbsp;+'/'}}
-=======
-                {{i===$store.state.gedanxin.tags.length-1?item &nbsp; :item &nbsp;+'/'}}
->>>>>>> e436518 (second)
               </div>
             </div>
             <div class="shuju">
@@ -48,14 +24,7 @@
                 歌曲:&ensp;{{
                   this.$store.state.gedanxin.trackCount
                 }}&nbsp;&nbsp;&nbsp;播放:&nbsp;{{
-<<<<<<< HEAD
                   this.$store.state.gedanxin.playCount
-=======
-                  (typeof $store.state.gedanxin.playCount === string)  ||
-                  $store.state.gedanxin.playCount < 10000
-                    ? $store.state.gedanxin.playCount
-                    : Math.round($store.state.gedanxin.playCount / 10000) + "万"
->>>>>>> e436518 (second)
                 }}
               </div>
             </div>
@@ -63,10 +32,7 @@
               {{ this.$store.state.gedanxin.description }}
             </div>
           </div>
-<<<<<<< HEAD
           <!-- <div class="jianjie">{{this.$store.state.gedanxin.description}}</div> -->
-=======
->>>>>>> e436518 (second)
         </div>
       </div>
       <div class="wen">
@@ -74,11 +40,7 @@
         <div>评论({{ this.$store.state.gedanxin.commentCount }})</div>
         <div>收藏者</div>
       </div>
-<<<<<<< HEAD
       <div class="biaoge">
-=======
-      <div class="biaoge" v-loading="load">
->>>>>>> e436518 (second)
         <n-table
           striped
           size="small"
@@ -117,11 +79,7 @@
                   <svg class="icon" aria-hidden="true" @click="zan(x)">
                     <use
                       :xlink:href="
-<<<<<<< HEAD
                         $store.state.tt.indexOf(x) !== -1
-=======
-                        tt.indexOf(x.id) !== -1
->>>>>>> e436518 (second)
                           ? '#icon-aixin'
                           : '#icon-56aixin'
                       "
@@ -161,11 +119,6 @@ export default {
   data() {
     return {
       dq: "",
-<<<<<<< HEAD
-=======
-      tt: "",
-      load: true,
->>>>>>> e436518 (second)
     };
   },
   methods: {
@@ -193,7 +146,6 @@ export default {
   },
   async created() {
     let tt = [];
-<<<<<<< HEAD
     for (let i = 0; i < this.$store.state.lsong.length; i++) {
       this.$store.state.gedanlist.map((x) => {
         if (x.id === this.$store.state.lsong[i].id) {
@@ -203,19 +155,6 @@ export default {
     }
 
     this.$store.commit("tt", tt);
-=======
-    tt = this.$store.state.lsong.map((x) => {
-      return x.id;
-    });
-    this.tt = tt;
-    // while(this.$store.state.gedanlist){
-    //
-    // }
-    // console.log(this.$store.state.gedanxin);
-  },
-  mounted() {
-    this.load = false;
->>>>>>> e436518 (second)
   },
 };
 </script>
@@ -247,11 +186,7 @@ export default {
   flex-direction: row;
 }
 .tags div {
-<<<<<<< HEAD
   color: rgb(34, 34, 211);
-=======
-  color: rgb(15, 44, 158);
->>>>>>> e436518 (second)
 }
 .biao {
   font-size: 13px;
@@ -290,21 +225,12 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-<<<<<<< HEAD
-.tags div:nth-child(1) ~ div {
-}
-=======
 
->>>>>>> e436518 (second)
 .jian {
   font-size: 19px;
   font-weight: 600;
 }
 .biaoge {
-<<<<<<< HEAD
-=======
-  // position: relative;
->>>>>>> e436518 (second)
   width: 100% !important;
   // margin:10px 20px;
 }
@@ -329,23 +255,5 @@ export default {
 .isyin {
   display: none;
 }
-<<<<<<< HEAD
-=======
-.zuo {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-}
-.zuo > img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-.zuo > span {
-  font-size: 13.5px;
-  color: rgb(120, 121, 122);
-}
->>>>>>> e436518 (second)
 </style>
 

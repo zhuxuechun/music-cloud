@@ -1,10 +1,6 @@
 <template>
   <div class="qiehuan">
-<<<<<<< HEAD
     <div @click="qiehuan('gexing')" :id="qieh === 'gexing' ? 'isqie' : ''">
-=======
-  <div @click="qiehuan('gexing')" :id="qieh === 'gexing' ? 'isqie' : ''">
->>>>>>> e436518 (second)
       个性推荐
     </div>
     <div @click="qiehuan('zhuanshu')" :id="qieh === 'zhuanshu' ? 'isqie' : ''">
@@ -13,11 +9,7 @@
     <div @click="qiehuan('gedan')" :id="qieh === 'gedan' ? 'isqie' : ''">
       歌单
     </div>
-<<<<<<< HEAD
     <div @click="qiehuan('tuijian')" :id="qieh === 'tuijian' ? 'isqie' : ''">
-=======
-    <div @click="qiehuan('paihang')" :id="qieh === 'tuijian' ? 'isqie' : ''">
->>>>>>> e436518 (second)
       推荐榜
     </div>
     <div @click="qiehuan('geshou')" :id="qieh === 'geshou' ? 'isqie' : ''">
@@ -25,20 +17,7 @@
     </div>
     <div @click="qiehuan('zuixin')" :id="qieh === 'zuixin' ? 'isqie' : ''">
       最新歌手
-<<<<<<< HEAD
     </div>
-=======
-
-  <!-- </div> -->
-  <!-- <van-tabs class="qiehuan">
-    <van-tab title="个性推荐" @click="qiehuan('gexing')"></van-tab>
-    <van-tab title="专属定制" @click="qiehuan('zhuanshu')"></van-tab>
-    <van-tab title="歌单" @click="qiehuan('gedan')"></van-tab>
-    <van-tab title="推荐榜" @click="qiehuan('paihang')"></van-tab>
-    <van-tab title="歌手" @click="qiehuan('geshou')"></van-tab>
-    <van-tab title="最新歌手" @click="qiehuan('zuixin')"></van-tab>
-  </van-tabs> -->
->>>>>>> e436518 (second)
   </div>
   <el-scrollbar height="70vh" class="gundong">
     <div class="faxian">
@@ -51,11 +30,7 @@
         initial-index="0"
       >
         <el-carousel-item v-for="(item, index) in lunbopic" :key="index">
-<<<<<<< HEAD
           <img :src="item.pic" alt="" />
-=======
-          <img :src="item.pic + '?param=y200'" alt="" />
->>>>>>> e436518 (second)
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -63,7 +38,6 @@
       <span class="tuijian">推荐歌单</span>
       <div class="suiyi" v-for="(x, i) in playlists" :key="x.id">
         <!-- <span class="iconfont  plc">{{x.playCount}}</span> -->
-<<<<<<< HEAD
        
        <div class="plc">
          <span class="icon">
@@ -75,28 +49,10 @@
         <div>
           <img
             :src="x.coverImgUrl"
-=======
-
-        <div class="plc">
-          <span class="icon">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-24gf-play"></use></svg
-            >{{ x.playCount }}</span
-          >
-        </div>
-
-        <div>
-          <img
-            :src="x.coverImgUrl + '?param=200y200'"
->>>>>>> e436518 (second)
             alt=""
             id="img"
             @mouseenter="chudian(i)"
             @click="diange(x)"
-<<<<<<< HEAD
-=======
-            class="demo-image__lazy"
->>>>>>> e436518 (second)
           />
           <span :class="chu === i ? 'bo' : 'boo'">
             <span class="icon">
@@ -110,38 +66,18 @@
       </div>
     </div>
   </el-scrollbar>
-<<<<<<< HEAD
   <div class="geshou" v-if="$store.state.isgeshou">
     <Geshou></Geshou>
     <!-- <geshou></geshou> -->
-=======
-  <div class="geshou" v-if="qieqie === 'geshou'">
-    <Geshou></Geshou>
-  </div>
-  <div class="paihang" v-if="qieqie === 'paihang'">
-    <Paihang></Paihang>
->>>>>>> e436518 (second)
   </div>
 </template>
 
 <script>
 import { Button } from "vant";
-<<<<<<< HEAD
 import Geshou from "../geshou/geshou.vue";
 import geshou from "../geshou/geshou.vue";
 export default {
   components: { Geshou },
-=======
-import dayjs from "dayjs";
-import Geshou from "../geshou/geshou.vue";
-import geshou from "../geshou/geshou.vue";
-import Paihang from "../../components/paihang/paihang.vue";
-export default {
-  components: {
-    Geshou,
-    Paihang,
-  },
->>>>>>> e436518 (second)
   name: "Index",
   data() {
     return {
@@ -150,10 +86,6 @@ export default {
       gedan: [],
       chu: "",
       playlists: [],
-<<<<<<< HEAD
-=======
-      qieqie: "",
->>>>>>> e436518 (second)
     };
   },
   props: {
@@ -165,19 +97,13 @@ export default {
       // console.log(can);
     },
     async diange(can) {
-<<<<<<< HEAD
       // console.log(can);
-=======
-      this.$router.push("gedan");
-      can.createTime = dayjs(can.createTime).format("YYYY-MM-DD");
->>>>>>> e436518 (second)
       this.$store.commit("gedanye", can);
       let {
         data: { songs },
       } = await this.$host.get(
         "Api/playlist/track/all?id=" + can.id + "&limit=50"
       );
-<<<<<<< HEAD
       //  console.log(songs);
       this.$store.commit("gdlist", songs);
       this.$store.commit("slist", songs);
@@ -189,44 +115,23 @@ export default {
       if (can === "geshou") {
         this.$store.commit("geshou");
       } else this.$store.commit("bxgeshou");
-=======
-      this.$store.commit("gdlist", songs);
-      this.$store.commit("slist", songs);
-    },
-    qiehuan(can) {
-      this.qieh = can;
-      this.qieqie = can;
->>>>>>> e436518 (second)
     },
   },
 
   async created() {
     const { data: res } = await this.$host.get("Api/homepage/block/page");
     this.lunbopic = res.data.blocks[0].extInfo.banners;
-<<<<<<< HEAD
     // console.log(res.data.blocks[0].extInfo.banners.slice(0,11));
-=======
->>>>>>> e436518 (second)
 
     const {
       data: { playlists },
     } = await this.$host.get("Api/top/playlist?limit=10");
-<<<<<<< HEAD
     // console.log(playlists);
     playlists.forEach((x,i)=>{
       if(x.playCount>10000){
         x.playCount=Math.ceil(x.playCount/10000)+'万'
       }
     })
-=======
-
-    playlists.forEach((x, i) => {
-      if (x.playCount > 10000) {
-        x.playCount = Math.ceil(x.playCount / 10000) + "万";
-        x.coverImgUrl = x.coverImgUrl + "?param=300y300";
-      }
-    });
->>>>>>> e436518 (second)
     this.playlists = playlists;
   },
 };
@@ -367,18 +272,6 @@ export default {
   background-color: rgb(255, 255, 255);
   height: 80%;
 }
-<<<<<<< HEAD
-=======
-.paihang {
-  position: fixed;
-  top: 150px;
-  // border: 4px solid red;
-  width: 100%;
-  z-index: 2008;
-  background-color: rgb(255, 255, 255);
-  bottom: 90px;
-}
->>>>>>> e436518 (second)
 .plc {
   position: absolute;
   font-size: 14px;
@@ -387,13 +280,8 @@ export default {
   right: 10px;
   // color:rgb(255, 255, 255) !important;
 }
-<<<<<<< HEAD
 .icon{
   color:rgb(255, 255, 255) !important;
-=======
-.icon {
-  color: rgb(255, 255, 255) !important;
->>>>>>> e436518 (second)
 }
 .suiyi {
   position: relative;

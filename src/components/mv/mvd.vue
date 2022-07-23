@@ -71,7 +71,6 @@
         <div class="commit">
           <span class="jing">精彩评论</span>
           <div class="yitiao" v-for="x in cs" :key="x.id">
-<<<<<<< HEAD
             <img
               :src="x.user.avatarUrl"
               alt=""
@@ -83,16 +82,6 @@
             <div class="biaoo">
               <span class="iconfont icon-dianzan">({{x.likedCount}})</span>
               <span class="iconfont icon-pinglun1">({{x.replyCount}})</span>
-=======
-            <img :src="x.user.avatarUrl" alt="" />
-            <div class="ping">
-              <div>{{ x.user.nickname }}:{{ x.content }}</div>
-              <div>{{ x.timeStr }}</div>
-            </div>
-            <div class="biaoo">
-              <span class="iconfont icon-dianzan">({{ x.likedCount }})</span>
-              <span class="iconfont icon-pinglun1">({{ x.replyCount }})</span>
->>>>>>> e436518 (second)
               <span class="iconfont icon-31zhuanfa"></span>
             </div>
           </div>
@@ -142,11 +131,7 @@ export default {
       if (this.otime - this.ntime < 1500) {
         return;
       }
-<<<<<<< HEAD
       console.log(this.otime - this.ntime);
-=======
-      // console.log(this.otime - this.ntime);
->>>>>>> e436518 (second)
       this.loading = true;
     },
   },
@@ -165,26 +150,17 @@ export default {
         data: { data: re },
       } = await this.$host.get("Api/top/mv?limit=5&offset=" + this.offset);
 
-<<<<<<< HEAD
       // console.log(re);
-=======
->>>>>>> e436518 (second)
       this.plist = re;
     },
     canplay() {
       this.ntime = new Date().getTime();
-<<<<<<< HEAD
       // console.log(this.ntime);
-=======
->>>>>>> e436518 (second)
       this.loading = false;
     },
 
     async guan(can) {
-<<<<<<< HEAD
       //   console.log(can);
-=======
->>>>>>> e436518 (second)
       let {
         data: { data },
       } = await this.$host.get("Api/mv/url?id=" + can.id);
@@ -193,7 +169,6 @@ export default {
         data: { data: r },
       } = await this.$host.get("Api/mv/detail?mvid=" + can.id);
       this.mv = r;
-<<<<<<< HEAD
       // console.log(r);
     },
   },
@@ -201,11 +176,6 @@ export default {
   // updated() {
   //     this.loading = true;
   // },
-=======
-    },
-  },
-
->>>>>>> e436518 (second)
   async created() {
     let {
       data: { data },
@@ -217,7 +187,6 @@ export default {
     let {
       data: { data: re },
     } = await this.$host.get("Api/top/mv?limit=5");
-<<<<<<< HEAD
     let { data: {data:comments} } = await this.$host.get(
       "Api/comment/new?type=1&id=" + r.id + "&sortType=2"
     );
@@ -229,18 +198,6 @@ export default {
     // this.hcs = da.hotComments;
     this.plist = re;
     // console.log(r);
-=======
-    let {
-      data: { data: comments },
-    } = await this.$host.get(
-      "Api/comment/new?type=1&id=" + r.id + "&sortType=2"
-    );
-
-    this.cs = comments.comments;
-
-    this.plist = re;
-
->>>>>>> e436518 (second)
     this.mvurl = data.url;
   },
 };
@@ -391,16 +348,10 @@ export default {
   position: relative;
   display: flex;
   height: 80px;
-<<<<<<< HEAD
   align-items: center;
   // width:50vw !important;
   // border: 1px solid red;
   // justify-content: space-between;
-=======
-  // position: relative;
-  width:120% ;
-  align-items: center;
->>>>>>> e436518 (second)
 }
 
 .biaoo {
@@ -409,45 +360,27 @@ export default {
   font-weight: 400;
   display: block;
   position: absolute;
-<<<<<<< HEAD
   // margin-left:10vw;
   // width: 0;
   right: 0;
   bottom: 0;
 }
-=======
-  right: 0;
-  bottom: 0;
-}
-.biaoo>span{
-  margin-left: 5px;
-}
->>>>>>> e436518 (second)
 .jing {
   font-size: 20px;
   font-weight: 400;
 }
 .ping {
-<<<<<<< HEAD
   height:80%;
   margin-left: 10px;
   
 
-=======
-  height: 80%;
-  margin-left: 10px;
->>>>>>> e436518 (second)
 }
 .ping > div:nth-child(1) {
   font-size: 16px;
   overflow: hidden;
   -webkit-line-clamp: 2;
   overflow: hidden;
-<<<<<<< HEAD
   -webkit-box-orient:vertical;
-=======
-  -webkit-box-orient: vertical;
->>>>>>> e436518 (second)
   text-overflow: ellipsis;
   display: -webkit-box;
   font-weight: 400;
@@ -455,11 +388,7 @@ export default {
 .ping > div:nth-child(2) {
   font-size: 13.5px;
 }
-<<<<<<< HEAD
 .biaoo>span:nth-child(3){
-=======
-.biaoo > span:nth-child(3) {
->>>>>>> e436518 (second)
   font-size: 20px;
 }
 </style>

@@ -9,11 +9,8 @@ import './assets/iconfont.css'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
-<<<<<<< HEAD
-=======
 import { Tab,Tabs } from 'vant'
 
->>>>>>> e436518 (second)
 
 import { create, NCarousel, NRadioButton, NTable, NInput, NIcon, NDropdown, NSpace, NSwitch, NRadioGroup, NCollapse, NCollapseItem } from 'naive-ui'
 
@@ -25,12 +22,8 @@ const app = createApp(App)
 
 app.config.globalProperties.$host = axios
 
-<<<<<<< HEAD
 app.use(naive)
 
-=======
-app.use(naive).use(Tab).use(Tabs)
->>>>>>> e436518 (second)
 app.use(ElementPlus)
 app.use(moment)
 
